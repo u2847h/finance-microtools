@@ -40,12 +40,18 @@ form.addEventListener("submit", function(event) {
         Math.pow(1 + periodicReturn, numberOfPeriods);
 
     // Calculate the future value of the recurring contributions
-    const contributionGrowth =
+    let contributionGrowth;
+
+if (periodicReturn === 0) {
+    contributionGrowth = contribution * numberOfPeriods;
+} else {
+    contributionGrowth =
         contribution *
         (
             (Math.pow(1 + periodicReturn, numberOfPeriods) - 1)
             / periodicReturn
         );
+}
 
     // Add the two sources of money together
     const futureValue =
