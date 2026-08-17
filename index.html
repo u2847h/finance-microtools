@@ -3,12 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance Microtools</title>
+    <title>Compound Interest Calculator</title>
 </head>
+
 <body>
 
-    <h1>Finance Microtools</h1>
-    <p>Our calculator library starts here.</p>
+    <main>
+        <h1>Compound Interest Calculator</h1>
+
+        <p>
+            Estimate how your money could grow over time
+            with regular contributions.
+        </p>
+
+        <form>
+
+            <label for="startingAmount">
+                Starting amount
+            </label>
+            <input
+                type="number"
+                id="startingAmount"
+                placeholder="1000"
+                min="0"
+            >
+
+            <label for="contribution">
+                Recurring contribution
+            </label>
+            <input
+                type="number"
+                id="contribution"
+                placeholder="100"
+                min="0"
+            >
+
+            <label for="frequency">
+                Contribution frequency
+            </label>
+            <select id="frequency">
+                <option value="12">Monthly</option>
+                <option value="26">Every 2 weeks</option>
+                <option value="52">Weekly</option>
+                <option value="4">Quarterly</option>
+                <option value="1">Yearly</option>
+            </select>
+
+            <label for="returnRate">
+                Expected annual return (%)
+            </label>
+            <input
+                type="number"
+                id="returnRate"
+                placeholder="7"
+                min="0"
+                step="0.1"
+            >
+
+            <label for="years">
+                Number of years
+            </label>
+            <input
+                type="number"
+                id="years"
+                placeholder="10"
+                min="1"
+            >
+
+            <button type="submit">
+                Calculate
+            </button>
+
+        </form>
+
+        <section>
+            <h2>Results</h2>
+
+            <p>Estimated future value: <strong>$0</strong></p>
+            <p>Total contributions: <strong>$0</strong></p>
+            <p>Estimated investment growth: <strong>$0</strong></p>
+        </section>
+
+    </main>
 
 </body>
 </html>
