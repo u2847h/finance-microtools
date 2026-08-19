@@ -24,9 +24,19 @@ form.addEventListener("submit", function(event) {
         document.querySelector("#returnRate").value
     );
 
-    const years = Number(
-        document.querySelector("#years").value
-    );
+    const yearsInput = document.querySelector("#years").value;
+
+if (yearsInput === "") {
+    alert("Please enter the number of years.");
+    return;
+}
+
+const years = Number(yearsInput);
+
+if (years <= 0) {
+    alert("Please enter a number of years greater than 0.");
+    return;
+}
 if (years <= 0) {
     alert("Please enter a number of years greater than 0.");
     return;
