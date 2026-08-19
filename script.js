@@ -27,7 +27,10 @@ form.addEventListener("submit", function(event) {
     const years = Number(
         document.querySelector("#years").value
     );
-
+if (years <= 0) {
+    alert("Please enter a number of years greater than 0.");
+    return;
+}
     // Convert the annual return into a periodic return
     const periodicReturn = (annualReturn / 100) / frequency;
 
