@@ -45,7 +45,7 @@ if (contribution < 0) {
     const annualReturnInput =
     document.querySelector("#returnRate").value;
 
-if (annualReturnInput === "") {
+if (annualReturnInput.trim() === "") {
     alert("Please enter an expected annual return.");
     return;
 }
