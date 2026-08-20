@@ -23,9 +23,20 @@ if (startingAmount < 0) {
     return;
 }
 
-    const contribution = Number(
-        document.querySelector("#contribution").value
-    );
+    const contributionInput =
+    document.querySelector("#contribution").value;
+
+if (contributionInput === "") {
+    alert("Please enter a recurring contribution.");
+    return;
+}
+
+const contribution = Number(contributionInput);
+
+if (contribution < 0) {
+    alert("Recurring contribution cannot be negative.");
+    return;
+}
 
     const frequency = Number(
         document.querySelector("#frequency").value
