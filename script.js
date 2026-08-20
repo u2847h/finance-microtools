@@ -8,9 +8,20 @@ form.addEventListener("submit", function(event) {
     event.preventDefault();
 
     // Get the numbers entered by the user
-    const startingAmount = Number(
-        document.querySelector("#startingAmount").value
-    );
+    const startingAmountInput =
+    document.querySelector("#startingAmount").value;
+
+if (startingAmountInput === "") {
+    alert("Please enter a starting amount.");
+    return;
+}
+
+const startingAmount = Number(startingAmountInput);
+
+if (startingAmount < 0) {
+    alert("Starting amount cannot be negative.");
+    return;
+}
 
     const contribution = Number(
         document.querySelector("#contribution").value
