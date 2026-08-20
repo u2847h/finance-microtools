@@ -42,9 +42,20 @@ if (contribution < 0) {
         document.querySelector("#frequency").value
     );
 
-    const annualReturn = Number(
-        document.querySelector("#returnRate").value
-    );
+    const annualReturnInput =
+    document.querySelector("#returnRate").value;
+
+if (annualReturnInput === "") {
+    alert("Please enter an expected annual return.");
+    return;
+}
+
+const annualReturn = Number(annualReturnInput);
+
+if (annualReturn < 0) {
+    alert("Annual return cannot be negative.");
+    return;
+}
 
     const yearsInput = document.querySelector("#years").value;
 
